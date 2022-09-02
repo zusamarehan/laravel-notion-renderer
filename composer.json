@@ -1,0 +1,49 @@
+{
+    "name": "rehankanak/laravel-notion-renderer",
+    "description": "Laravel Package for Converting Notion Pages to Web Pages",
+    "keywords": [
+        "rehankanak",
+        "laravel-renderer",
+        "notion",
+        "notion-renderer",
+        "notion-laravel-renderer"
+    ],
+    "homepage": "https://github.com/zusamarehan/laravel-notion-renderer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "KU Rehan",
+            "email": "zrehan286@gmail.com",
+            "homepage": "https://github.com/zusamarehan/laravel-notion-renderer",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "RehanKanak\\LaravelNotionRenderer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RehanKanak\\LaravelNotionRenderer\\": "src"
+        }
+    },
+    "scripts": {},
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RehanKanak\\LaravelNotionRenderer\\NotionRendererServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "funding": []
+}

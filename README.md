@@ -31,6 +31,7 @@ Recommendation: We suggest to use https://tailwindcss.com/docs/typography-plugin
 
 Note: The NotionRenderer class extensively uses Notion's Block API (https://developers.notion.com/reference/get-block-children) to get
 the content of the Notion Page. Also, your API key must be present at `.env` file, check the `config` file of the package for more details.
+
 ------
 ## Supported Block List:
 

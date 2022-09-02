@@ -7,7 +7,9 @@ use RehanKanak\LaravelNotionRenderer\Renderers\NotionRenderer;
 class Block
 {
     public $block;
+
     public $previousBlock;
+
     public $result;
 
     public function __construct($block, $previousBlock)

@@ -16,10 +16,12 @@ use RehanKanak\LaravelNotionRenderer\NotionAPIService\NotionBlocks;
 class NotionRenderer
 {
     public $blocks = [];
+
     public $previousBlock;
+
     public $results;
 
-    CONST BLOCKS = [
+    const BLOCKS = [
         'paragraph',
         'heading_1',
         'heading_2',
@@ -31,7 +33,7 @@ class NotionRenderer
         'table',
     ];
 
-    CONST BLOCKS_WITHOUT_LIST = [
+    const BLOCKS_WITHOUT_LIST = [
         'paragraph',
         'heading_1',
         'heading_2',
@@ -40,7 +42,6 @@ class NotionRenderer
         'image',
         'table',
     ];
-
 
     /**
      * @throws NotionException
@@ -63,62 +64,53 @@ class NotionRenderer
     public function render(): NotionRenderer
     {
         foreach ($this->blocks as $block) {
-
-            if (!in_array($block['type'], NotionRenderer::BLOCKS)) {
+            if (! in_array($block['type'], NotionRenderer::BLOCKS)) {
                 continue;
             }
 
             if ($block['type'] === 'paragraph') {
-
                 $this->results .= (new Paragraph($block, $this->previousBlock))
                     ->process()
                     ->render();
             }
 
             if ($block['type'] === 'heading_1') {
-
                 $this->results .= (new Heading1($block, $this->previousBlock))
                     ->process()
                     ->render();
             }
 
             if ($block['type'] === 'heading_2') {
-
                 $this->results .= (new Heading2($block, $this->previousBlock))
                     ->process()
                     ->render();
             }
 
             if ($block['type'] === 'heading_3') {
-
                 $this->results .= (new Heading3($block, $this->previousBlock))
                     ->process()
                     ->render();
             }
 
             if ($block['type'] === 'quote') {
-
                 $this->results .= (new Quote($block, $this->previousBlock))
                     ->process()
                     ->render();
             }
 
             if ($block['type'] === 'numbered_list_item') {
-
                 $this->results .= (new Listing($block, $this->previousBlock))
                     ->process()
                     ->render();
             }
 
             if ($block['type'] === 'bulleted_list_item') {
-
                 $this->results .= (new Listing($block, $this->previousBlock))
                     ->process()
                     ->render();
             }
 
             if ($block['type'] === 'image') {
-
                 $this->results .= (new Image($block, $this->previousBlock))
                     ->caption()
                     ->process()
@@ -126,7 +118,6 @@ class NotionRenderer
             }
 
             if ($block['type'] === 'table') {
-
                 $this->results .= (new Table($block, $this->previousBlock))
                     ->children()
                     ->process()

@@ -35,8 +35,9 @@ class Table extends Block
 
     public function process(): Table
     {
-        if (!count($this->children)) {
+        if (! count($this->children)) {
             $this->result = '';
+
             return $this;
         }
 
@@ -48,24 +49,21 @@ class Table extends Block
                 foreach ($row['table_row']['cells'] as $cellIndex => $cell) {
                     if (($rowIndex === 0 && $this->block['table']['has_column_header']) || ($cellIndex === 0 && $this->block['table']['has_row_header'])) {
                         $this->result .= '<th>';
-                    }
-                    else {
+                    } else {
                         $this->result .= '<td>';
                     }
 
                     foreach ($cell as $content) {
                         if ($content['text']['link'] !== null) {
-                            $this->result .= "<a target='_blank' href=".$content['text']['link']['url'].">".$content['text']['content']."</a>";
-                        }
-                        else {
+                            $this->result .= "<a target='_blank' href=".$content['text']['link']['url'].'>'.$content['text']['content'].'</a>';
+                        } else {
                             $this->result .= $content['text']['content'];
                         }
                     }
 
                     if (($rowIndex === 0 && $this->block['table']['has_column_header']) || ($cellIndex === 0 && $this->block['table']['has_row_header'])) {
                         $this->result .= '</th>';
-                    }
-                    else {
+                    } else {
                         $this->result .= '</td>';
                     }
                 }
@@ -74,12 +72,14 @@ class Table extends Block
         }
 
         Table::end();
+
         return $this;
     }
 
     public function render(): string
     {
         $this->previousBlock = $this->block;
+
         return $this->result;
     }
 }

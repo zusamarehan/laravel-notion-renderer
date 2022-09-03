@@ -2,9 +2,9 @@
 
 namespace RehanKanak\LaravelNotionRenderer\NotionAPIService;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use RehanKanak\LaravelNotionRenderer\Exceptions\NotionException;
-use GuzzleHttp\Client;
 
 class NotionBlocks
 {
@@ -25,7 +25,7 @@ class NotionBlocks
                     'Accept' => 'application/json',
                     'Content-Type' => 'application/json',
                     'Notion-Version' => config('notion-renderer.NOTION_API_VERSION'),
-                    'Authorization' => "Bearer ".config('notion-renderer.NOTION_API'),
+                    'Authorization' => 'Bearer '.config('notion-renderer.NOTION_API'),
                 ],
             ]);
 
@@ -40,8 +40,7 @@ class NotionBlocks
                 'success' => false,
                 'details' => json_decode($blocks->getBody(), true),
             ];
-        }
-        catch (GuzzleException $e) {
+        } catch (GuzzleException $e) {
             throw new NotionException($e->getMessage(), $e->getCode());
         }
     }

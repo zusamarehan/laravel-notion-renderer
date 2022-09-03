@@ -23,7 +23,7 @@ class NotionPage
                     'Accept' => 'application/json',
                     'Content-Type' => 'application/json',
                     'Notion-Version' => config('notion-renderer.NOTION_API_VERSION'),
-                    'Authorization' => "Bearer ".config('notion-renderer.NOTION_API'),
+                    'Authorization' => 'Bearer '.config('notion-renderer.NOTION_API'),
                 ],
             ]);
 
@@ -38,8 +38,7 @@ class NotionPage
                 'success' => false,
                 'details' => json_decode($pages->getBody(), true),
             ];
-        }
-        catch (GuzzleException $e) {
+        } catch (GuzzleException $e) {
             throw new NotionException($e->getMessage(), $e->getCode());
         }
     }

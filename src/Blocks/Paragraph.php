@@ -19,24 +19,22 @@ class Paragraph extends Block
         Paragraph::start();
 
         foreach ($this->block['paragraph']['rich_text'] as $content) {
-
             if ($content['text']['link'] !== null) {
-                $this->result .= "<a target='_blank' href=".$content['text']['link']['url'].">".$content['text']['content']."</a>";
-            }
-
-            else {
+                $this->result .= "<a target='_blank' href=".$content['text']['link']['url'].'>'.$content['text']['content'].'</a>';
+            } else {
                 $this->result .= $content['text']['content'];
             }
-
         }
 
         Paragraph::end();
+
         return $this;
     }
 
     public function render(): string
     {
         $this->previousBlock = $this->block;
+
         return $this->result;
     }
 }

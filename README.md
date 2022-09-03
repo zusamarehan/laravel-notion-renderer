@@ -77,3 +77,12 @@ $notionPage = (new NotionDatabase())->fetch('yourPageId')
 ### Note
 For this to work, you need to create Integration and share the page with the Integration.
 For more details on obtaining and creating Integrations, please refer this page: https://www.notion.so/my-integrations
+
+## Credits
+
+- [zusamarehan](https://github.com/zusamarehan)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

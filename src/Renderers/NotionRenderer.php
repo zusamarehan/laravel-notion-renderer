@@ -124,7 +124,7 @@ class NotionRenderer
                     ->children()
                     ->process()
                     ->render();
-			}
+            }
 
             if ($block['type'] === 'divider') {
                 $this->results .= (new Divider($block, $this->previousBlock))

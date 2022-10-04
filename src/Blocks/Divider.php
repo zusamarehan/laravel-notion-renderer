@@ -4,10 +4,9 @@ namespace RehanKanak\LaravelNotionRenderer\Blocks;
 
 class Divider extends Block
 {
-
     public function process(): Divider
     {
-		$this->result .= '<div class="divide-y"></div>';
+        $this->result .= '<div class="divide-y"></div>';
 
         return $this;
     }

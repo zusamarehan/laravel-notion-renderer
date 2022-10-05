@@ -6,7 +6,7 @@ class Divider extends Block
 {
     public function process(): Divider
     {
-        $this->result .= '<div class="divide-y"></div>';
+        $this->result .= '<div class="border-b my-1"></div>';
 
         return $this;
     }

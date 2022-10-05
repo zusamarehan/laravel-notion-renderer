@@ -12,7 +12,7 @@ Our renderer converts the JSON and converts it into HTML (converting to Markdown
 ## Installation
 
 You can install the package via composer:
-    
+
 ```bash
 composer require rehan/laravel-notion-renderer
 ```
@@ -25,7 +25,7 @@ $pageHTML = (new NotionRenderer('yourPageId'))->html();
 
 That's it 🎉
 
-Your Notion Page is now converted to HTML and can use displayed in your web application. 
+Your Notion Page is now converted to HTML and can use displayed in your web application.
 
 Recommendation: We suggest to use https://tailwindcss.com/docs/typography-plugin to style the HTML (or you may use your own CSS for the styling).
 
@@ -45,6 +45,7 @@ Only the below blocks are currently Supported, but more blocks are coming soon.
 - Bulleted List
 - Image
 - Table
+- Divider
 
 Full list of blocks can be found here: https://developers.notion.com/reference/block
 

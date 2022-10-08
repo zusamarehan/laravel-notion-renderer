@@ -2,6 +2,7 @@
 
 namespace RehanKanak\LaravelNotionRenderer\Renderers;
 
+use RehanKanak\LaravelNotionRenderer\Blocks\Callout;
 use RehanKanak\LaravelNotionRenderer\Blocks\Divider;
 use RehanKanak\LaravelNotionRenderer\Blocks\Heading1;
 use RehanKanak\LaravelNotionRenderer\Blocks\Heading2;
@@ -29,6 +30,7 @@ class NotionRenderer
         'heading_3',
         'numbered_list_item',
         'bulleted_list_item',
+        'callout',
         'quote',
         'image',
         'table',
@@ -40,6 +42,7 @@ class NotionRenderer
         'heading_1',
         'heading_2',
         'heading_3',
+        'callout',
         'quote',
         'image',
         'table',
@@ -90,6 +93,12 @@ class NotionRenderer
 
             if ($block['type'] === 'heading_3') {
                 $this->results .= (new Heading3($block, $this->previousBlock))
+                    ->process()
+                    ->render();
+            }
+
+            if ($block['type'] === 'callout') {
+                $this->results .= (new Callout($block, $this->previousBlock))
                     ->process()
                     ->render();
             }

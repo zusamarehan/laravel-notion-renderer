@@ -14,7 +14,7 @@ Our renderer converts the JSON and converts it into HTML (converting to Markdown
 You can install the package via composer:
 
 ```bash
-composer require rehan/laravel-notion-renderer
+composer require rehankanak/laravel-notion-renderer 
 ```
 ---
 ## Usage
